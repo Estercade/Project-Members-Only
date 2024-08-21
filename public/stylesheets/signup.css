@@ -1,0 +1,19 @@
+/* Sign up form stylesheet */
+
+.signupForm {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: max(350px, 25%);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.signupFormItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.signupFormSubmitButton {
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+}

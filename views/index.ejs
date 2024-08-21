@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <title><%- title %></title>
+</head>
+<body>
+    <% if (locals.displayMessages && locals.displayMessages.length > 0) { %>
+        <div class="alertsContainer">
+            <ul>
+                <% displayMessages.forEach((message) => { %>
+                <li><%= message %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+    <%- include("partials/navbar"); %>
+    <% if(locals.user) { %>
+        <h1>Hello, <%= user.fullname %>!</h1>
+    <% } %>
+    <ul>
+        <% messages.forEach((message) => { %>
+            <li class="messageContainer">
+                <p class="messageAuthor"><%= message.username %></p>
+                <p class="messageDate"><%= message.date %></p>
+                <p class="messageText"><%= message.message %></p>
+                <% if(locals.user && user.membership === 'administrator') { %>
+                    <form action="/delete/<%- message.message_id %>" method="POST" class="messageControls">
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this message');" class="deleteItemButton">Delete</button>
+                    </form>
+                <% } %>
+            </li>
+        <% }) %>        
+    </ul>
+    <% if(locals.user && (user.membership === 'administrator' | user.membership === 'member')) { %>
+        <a href="/post">Post a new message</a>
+    <% } %>
+</body>
+</html>

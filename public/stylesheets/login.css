@@ -1,0 +1,19 @@
+/* Login form stylesheet */
+
+.loginForm {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: max(350px, 25%);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.loginFormItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitLoginFormButton {
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+}

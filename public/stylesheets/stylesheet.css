@@ -1,0 +1,28 @@
+/* General stylesheet */
+
+* {
+    /* border: 1px solid red; */
+}
+
+/* reset browser defaults */
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0.2rem;
+}
+
+/* navbar styling begins */
+nav {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.navControls {
+    margin-left: auto;
+}
+/* navbar styling ends */

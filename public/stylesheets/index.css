@@ -1,0 +1,44 @@
+/* Index stylesheet */
+
+.messageContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: min-content auto;
+    grid-template-areas: 
+        "user date"
+        "text text"
+        "controls controls";
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.messageAuthor {
+    grid-area: user;
+}
+
+.messageDate {
+    grid-area: date;
+    text-align: right;
+}
+
+.messageText {
+    grid-area: text;
+}
+
+.messageControls {
+    grid-area: controls;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .messageContainer {
+        display: block;
+        text-align: center;
+    }
+
+    .messageDate {
+        text-align: center;
+    }
+}
